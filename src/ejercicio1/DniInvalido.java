@@ -2,6 +2,7 @@ package ejercicio1;
 
 public class DniInvalido extends Exception {
 	
+	
 	public DniInvalido() {}
 
 	@Override

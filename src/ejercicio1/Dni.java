@@ -4,7 +4,7 @@ public class Dni
 {
 	int numero;
 	
-	public static boolean VerificarDniValido(String dni) throws DniInvalido
+	public static boolean VerificarDniInvalido(String dni) throws DniInvalido
 	{
 		
 		boolean SoloNumeros = true;

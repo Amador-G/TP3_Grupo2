@@ -8,12 +8,13 @@ public class Principal {
 
 		try
 		{
-			String dni = JOptionPane.showInputDialog("Ingrese correo electronico: ");
-			Dni.VerificarDniValido(dni);
+			String dni = JOptionPane.showInputDialog("Ingrese su Numero de Dni: ");
+			Dni.VerificarDniInvalido(dni);
+			System.out.println("DNI VALIDO");
 		}
 		catch(DniInvalido e)
 		{
-			System.out.println("Debe Tener solo nuemeros!");
+			System.out.println("Debe Tener solo numeros!");
 			e.printStackTrace();
 		}
 	}
