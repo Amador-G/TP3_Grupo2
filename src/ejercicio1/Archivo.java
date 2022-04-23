@@ -1,5 +1,6 @@
 package ejercicio1;
-
+import java.util.Scanner;
+import java.util.TreeSet;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,6 +11,10 @@ import java.io.IOException;
 public class Archivo {
 	
 	private String ruta;
+	
+	Archivo(){};
+	Archivo(String Ruta){this.ruta = Ruta;}
+	
 
 	public boolean existe()
 	{
@@ -75,7 +80,32 @@ public class Archivo {
 		this.ruta = ruta;
 	}
 	
-	
+	public void CargarLIsta(TreeSet<Persona> Lista, String Ruta) {
+		Scanner s = null;
+		try {
+				s = new Scanner(Ruta);
+				while(s.hasNextLine()) 
+				{
+					String Linea = s.nextLine();
+					String [] cortarString = Linea.split("-");
+					Persona persona = new Persona();
+					persona.setNombre(cortarString[0]);
+					persona.setApellido(cortarString[1]);
+					persona.setDni(cortarString[2]);
+					Lista.add(persona);				
+			    }
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				try {
+					if(s!=null) {
+						s.close();
+					}
+				}catch(Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+	}
 	
 
 }
