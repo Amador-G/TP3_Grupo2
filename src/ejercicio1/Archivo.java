@@ -1,4 +1,5 @@
 package ejercicio1;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 import java.io.BufferedReader;
@@ -80,8 +81,9 @@ public class Archivo {
 		this.ruta = ruta;
 	}
 	
-	public void CargarLIsta(TreeSet<Persona> Lista, String Ruta) {
+	public void CargarLIsta(String Ruta) {
 		Scanner s = null;
+		TreeSet<Persona> ListaDePersonas = new TreeSet<Persona>();
 		try {
 				s = new Scanner(Ruta);
 				while(s.hasNextLine()) 
@@ -92,7 +94,7 @@ public class Archivo {
 					persona.setNombre(cortarString[0]);
 					persona.setApellido(cortarString[1]);
 					persona.setDni(cortarString[2]);
-					Lista.add(persona);				
+					ListaDePersonas.add(persona);				
 			    }
 			}catch(Exception e){
 				e.printStackTrace();
@@ -105,6 +107,11 @@ public class Archivo {
 					e2.printStackTrace();
 				}
 			}
+		Iterator<Persona> Li = ListaDePersonas.iterator();
+		while (Li.hasNext()) {
+			Persona Pr = Li.next();  
+			System.out.println(Pr.toString());
+		}
 	}
 	
 

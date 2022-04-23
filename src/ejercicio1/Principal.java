@@ -1,18 +1,15 @@
 package ejercicio1;
 
-import java.util.TreeSet;
 
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		TreeSet<Persona> ListaDePersonas = new TreeSet<Persona>();
+		
 		Archivo archivo = new Archivo("Personas.txt");
-		archivo.CargarLIsta(ListaDePersonas, "Personas.txt");
-		for (Persona p : ListaDePersonas) {
-			System.out.println(p.toString());			
-		}
+		archivo.CargarLIsta("Personas.txt");
+		
 		
 		
 		
