@@ -7,7 +7,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		Archivo archivo = new Archivo();
+		/*Archivo archivo = new Archivo();
 		archivo.setRuta("Personas.txt");
 		
 		if(archivo.existe())
@@ -20,7 +20,10 @@ public class Principal {
 		else
 		{
 			System.out.println("No existe archivo.");
-		}
+		}*/
+		
+		
+		
 		
 		
 	}
