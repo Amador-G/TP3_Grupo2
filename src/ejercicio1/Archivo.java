@@ -89,7 +89,7 @@ public class Archivo {
 				while(s.hasNextLine()) 
 				{
 					String Linea = s.nextLine();
-					String [] cortarString = Linea.split("-");
+					String [] cortarString =	Linea.split("-");
 					Persona persona = new Persona();
 					persona.setNombre(cortarString[0]);
 					persona.setApellido(cortarString[1]);
@@ -107,12 +107,10 @@ public class Archivo {
 					e2.printStackTrace();
 				}
 			}
-		Iterator<Persona> Li = ListaDePersonas.iterator();
-		while (Li.hasNext()) {
-			Persona Pr = Li.next();  
-			System.out.println(Pr.toString());
+		for (Persona p : ListaDePersonas) {
+			System.out.println(p.toString());			
+		}
 		}
 	}
 	
 
-}
