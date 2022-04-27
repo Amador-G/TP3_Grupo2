@@ -1,6 +1,6 @@
 package ejercicio1;
 
-
+import java.util.TreeSet;
 
 public class Principal {
 
@@ -8,7 +8,7 @@ public class Principal {
 		
 		
 		Archivo archivo = new Archivo("Personas.txt");
-		archivo.CargarLIsta("Personas.txt");
+		// archivo.CargarLIsta("Personas.txt");
 		
 		
 		
@@ -47,6 +47,26 @@ public class Principal {
 //			System.out.println(p.toString());			
 //		}
 
+		TreeSet<String> lista = new TreeSet<String>();
+
+
+        if(archivo.existe())
+        {
+            System.out.println("Existe archivo");
+
+            // archivo.lee_lineas();
+            lista = archivo.archivo_a_tree();
+
+
+            System.out.println(lista);
+
+
+        }
+        else
+        {
+            System.out.println("No existe archivo.");
+        }
+		
 }
 	
 	

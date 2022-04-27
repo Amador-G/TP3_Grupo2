@@ -81,7 +81,7 @@ public class Archivo {
 		this.ruta = ruta;
 	}
 	
-	public void CargarLIsta(String Ruta) {
+	/*public void CargarLIsta(String Ruta) {
 		Scanner s = null;
 		TreeSet<Persona> ListaDePersonas = new TreeSet<Persona>();
 		try {
@@ -110,7 +110,32 @@ public class Archivo {
 		for (Persona p : ListaDePersonas) {
 			System.out.println(p.toString());			
 		}
-		}
+		}*/
+	
+	
+	public TreeSet<String> archivo_a_tree() {
+        FileReader entrada;
+        TreeSet<String> listaP = new TreeSet<String>();
+        try {
+            entrada = new FileReader(ruta);
+            BufferedReader miBuffer = new BufferedReader(entrada);
+
+           String linea = "";
+            while (linea != null) {
+                if(linea!= "") {listaP.add(linea);}
+                linea = miBuffer.readLine();
+
+            }
+            miBuffer.close();
+            entrada.close();
+            return listaP;
+        } catch (IOException e) {
+            System.out.println("No se encontro el archivo");
+        }
+        return listaP;
+    }
+	
+	
 	}
 	
 
